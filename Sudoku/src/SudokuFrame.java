@@ -24,9 +24,12 @@ public class SudokuFrame extends JFrame {
 		windowPanel.add(sPanel);
 
 		this.add(windowPanel);
+<<<<<<< HEAD
 		
 		
 		
+=======
+>>>>>>> branch 'master' of git@github.com:petercrowed/Sudoku.git
 	}
 
 	public static void main(String[] args) {

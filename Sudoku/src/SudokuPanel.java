@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -126,5 +127,76 @@ public class SudokuPanel extends JPanel {
    
 
 	
+=======
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.text.ParseException;
+import java.util.regex.Pattern;
+
+import javax.swing.JFormattedTextField;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
+
+public class SudokuPanel extends JPanel {
+
+	private static final long serialVersionUID = 0;
+	private JTextField f[][] = new JTextField[9][9];
+	private JPanel p[][] = new JPanel[3][3];
+
+	public SudokuPanel() {
+		super();
+		Font font1 = new Font("SansSerif", Font.BOLD, 28);
+		
+		//Regex :D
+		
+		 
+		 
+		for (int x = 0; x <= 8; x++) {
+			for (int y = 0; y <= 8; y++) {
+				
+		
+			
+					
+				MaskFormatter formatter = null;
+				try {
+					formatter = new MaskFormatter("#");
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				JFormattedTextField tf = new JFormattedTextField(formatter);
+				f[x][y] = tf;
+				
+				f[x][y].setHorizontalAlignment(JTextField.CENTER);
+				f[x][y].setFont(font1);
+				f[x][y].setName("xd");
+
+			}
+		}
+
+		for (int x = 0; x <= 2; x++) {
+			for (int y = 0; y <= 2; y++) {
+				p[x][y] = new JPanel(new GridLayout(3, 3));
+			}
+		}
+
+		setLayout(new GridLayout(3, 3, 5, 5));
+
+		for (int u = 0; u <= 2; u++) {
+			for (int i = 0; i <= 2; i++) {
+				for (int x = 0; x <= 2; x++) {
+					for (int y = 0; y <= 2; y++) {
+						p[u][i].add(f[y + u * 3][x + i * 3]);
+					}
+				}
+				p[u][i].setPreferredSize(new Dimension(180, 180));
+
+				add(p[u][i]);
+			}
+		}
+	}
+>>>>>>> branch 'master' of git@github.com:petercrowed/Sudoku.git
 
 }
