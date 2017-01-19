@@ -28,16 +28,16 @@ public class SudokuPanel extends JPanel {
 	private static final long serialVersionUID = 0;
 	private JTextField f[][] = new JTextField[9][9];
 	private JPanel p[][] = new JPanel[3][3];
-	private String c;
-	
-	public String returnNumbersAsStrings() {
+	private char c;
+	private String d;
+	private String afterAllString;
+	public char returnNumbersAsStrings() {
 		SudokuGenerator sg = new SudokuGenerator();
 		sg.nextBoard(35);
-		for (Integer temp : sg.print()) {
-			c = String.valueOf(temp);
+		d = String.valueOf(sg.print());
+		c = d.charAt(0);
 			return c;
-		}
-		return null;
+			
 
 	}
 	public SudokuPanel() {
@@ -87,12 +87,15 @@ public class SudokuPanel extends JPanel {
 			for (int y = 0; y <= 8; y++)
 
 			{
-				System.out.println("lol: " + numberCheck);
-				System.out.println(returnNumbersAsStrings());
-				//f[x][y].setText(returnNumbersAsStrings());
+			
+				System.out.println("x: " + x + " y: " + y);
+				
+				afterAllString = Character.toString(returnNumbersAsStrings());
+				System.out.println("method call: " + afterAllString );
+				f[y][x].setText(afterAllString );
 				numberCheck++;
 			}
-		
+
 		
 		for (int x = 0; x <= 2; x++) {
 			for (int y = 0; y <= 2; y++) {

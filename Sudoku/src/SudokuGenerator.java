@@ -153,21 +153,23 @@ public class SudokuGenerator
 	 *Prints a representation of board on stdout
 	 * @return 
 	 */
-	public  List<Integer> print()
+	public  int print()
 	{
+		String a;
 		for(int i=0;i<9;i++)
 		{
 			for(int j=0;j<9;j++)
 			{
-				allNumbers.add(board[i][j]);
-				System.out.print(board[i][j]);
-			}
-			System.out.println();
 			
-			return allNumbers;
+				return board[i][j];
+				
+			}
+			//System.out.println();
+			
+		
 		
 		}
-		return null;
+		return 0;
 		
 	}
 	
