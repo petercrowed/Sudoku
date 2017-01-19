@@ -24,9 +24,7 @@ public class SudokuFrame extends JFrame {
 		windowPanel.add(sPanel);
 
 		this.add(windowPanel);
-		
-		
-		
+
 	}
 
 	public static void main(String[] args) {
